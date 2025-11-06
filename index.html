@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nosa mini game, play and enjoy with a wonderful community">
+<meta name="keywords" content="Nosa, Games, nosa games, GitHub nosa games">
+<meta name="google-site-verification" content="Qv4dhJwj-wdAWpDQ0bKYPfOazpxxv8EfP1EpC3MMKv0" />
+<title>Mini Tap Game</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  /* === Ad Sections === */
+  .ad-section {
+    width: 100%;
+    height: 90px;
+    background: #e9eef5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 14px;
+  }
+
+  /* === Game Area === */
+  .game-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #gameBox {
+    width: 200px;
+    height: 200px;
+    background: #3498db;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    user-select: none;
+    transition: background 0.2s ease;
+  }
+
+  #score {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background: #2ecc71;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #27ae60;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Ad Placement -->
+  <div class="ad-section">
+    <!-- Adsterra top ad code here -->
+    <span>Ad Space (Top)</span>
+  </div>
+
+  <!-- Game Section -->
+  <div class="game-container">
+    <div id="gameBox">Tap!</div>
+    <div id="score">Score: 0</div>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <!-- Bottom Ad Placement -->
+  <div class="ad-section">
+    <!-- Adsterra bottom ad code here -->
+    <span>Ad Space (Bottom)</span>
+  </div>
+
+<script>
+  const box = document.getElementById('gameBox');
+  const scoreDisplay = document.getElementById('score');
+  const resetBtn = document.getElementById('resetBtn');
+
+  let score = 0;
+  let colors = ['#e74c3c', '#f39c12', '#9b59b6', '#16a085', '#2980b9'];
+
+  // Tap event to increase score
+  box.addEventListener('click', () => {
+    score++;
+    scoreDisplay.textContent = 'Score: ' + score;
+    // Change color randomly
+    box.style.background = colors[Math.floor(Math.random() * colors.length)];
+  });
+
+  // Reset score
+  resetBtn.addEventListener('click', () => {
+    score = 0;
+    scoreDisplay.textContent = 'Score: 0';
+    box.style.background = '#3498db';
+  });
+</script>
+
+</body>
+</html>
